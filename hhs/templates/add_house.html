@@ -1,1 +1,40 @@
-<form>el formo</form>
+<form method="POST">
+  {% csrf_token %}
+
+  <div>
+    {{ form.address.errors }}
+    <label for="{{ form.address.id_for_label }}">Address:</label>
+    {{ form.address }}
+  </div>
+
+  <div>
+    {{ form.property_type.errors }}
+    <label for="{{ form.property_type.id_for_label }}">Type:</label>
+    {{ form.property_type }}
+  </div>
+
+  <div>
+    {{ form.room_count.errors }}
+    <label for="{{ form.room_count.id_for_label }}">Number of Rooms:</label>
+    {{ form.room_count }}
+  </div>
+
+  <div>
+    {{ form.available_date.errors }}
+    <label for="{{ form.available_date.id_for_label }}">Available from:</label>
+    {{ form.available_date }}
+  </div>
+
+  <div>
+    {{ form.price.errors }}
+    <label for="{{ form.price.id_for_label }}">Price:</label>
+    {{ form.price }}
+  </div>
+
+  <div>
+    {{ form.notes.errors }}
+    <label for="{{ form.notes.id_for_label }}">Notes:</label>
+    {{ form.notes }}
+  </div>
+
+</form>
