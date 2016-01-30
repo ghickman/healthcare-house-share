@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'healthcare_house_share.urls'
+ROOT_URLCONF = 'hhs.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'healthcare_house_share.wsgi.application'
+WSGI_APPLICATION = 'hhs.wsgi.application'
 
 
 # Database
