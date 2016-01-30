@@ -26,7 +26,7 @@ var coffee = require('gulp-coffee');
 
 var gutil = require('gulp-util');
 
-var devLocation = "hhs/devassets/";
+var devLocation = "devassets/";
 
 var publishedLocation = "static/";
 
