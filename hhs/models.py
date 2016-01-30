@@ -9,6 +9,7 @@ class Contract(models.Model):
 
     end_date = models.DateField()
     swap_after_end = models.BooleanField(default=False)
+    price = models.TextField()
 
     def __unicode__(self):
         return self.house.address
@@ -16,7 +17,6 @@ class Contract(models.Model):
 
 class House(models.Model):
     address = models.TextField()
-    price = models.TextField()
     room_count = models.IntegerField(default=1)
     property_type = models.TextField()
     parking_space_count = models.IntegerField(default=0)
