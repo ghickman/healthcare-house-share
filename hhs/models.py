@@ -3,13 +3,24 @@ from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
 
+class Contract(models.Model):
+    house = models.ForeignKey('House')
+    user = models.ForeignKey('User')
+
+    end_date = models.DateField()
+    swap_after_end = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.house.address
+
+
 class House(models.Model):
     address = models.TextField()
     price = models.TextField()
     room_count = models.IntegerField(default=1)
-    contract_end_date = models.DateField()
     property_type = models.TextField()
     parking_space_count = models.IntegerField(default=0)
+    lat_long = models.TextField()
 
     def __unicode__(self):
         return self.address
