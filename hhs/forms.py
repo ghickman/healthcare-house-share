@@ -7,4 +7,4 @@ class AddHouseForm(forms.Form):
     room_count = forms.IntegerField()
     available_date = forms.DateField()
     price = forms.IntegerField()
-    notes = forms.Textarea()
+    notes = forms.CharField(widget=forms.Textarea())
