@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'opbeat.contrib.django',
+
     'hhs',
 ]
 
@@ -118,3 +120,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'static',
 ]
+
+
+OPBEAT = {
+    'ORGANIZATION_ID': os.environ.get('OPBEAT_ORGANIZATION_ID'),
+    'APP_ID': os.environ.get('OPBEAT_APP_ID'),
+    'SECRET_TOKEN': os.environ.get('OPBEAT_SECRET_TOKEN'),
+}
