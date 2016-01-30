@@ -33,6 +33,7 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password, **extra_fields):
         extra_fields['is_superuser'] = True
+        extra_fields['is_staff'] = True
         return self._create_user(email, password, **extra_fields)
 
 
@@ -42,6 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     location = models.TextField()
     destination = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
 
