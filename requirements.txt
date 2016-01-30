@@ -2,6 +2,7 @@ boto==2.39.0
 dj-database-url==0.3.0
 Django==1.9.1
 django-storages==1.1.8
+gunicorn==19.4.5
 psycopg2==2.6.1
 wheel==0.26.0
 whitenoise==2.0.6
