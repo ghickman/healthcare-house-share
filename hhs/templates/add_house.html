@@ -1,40 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <form method="POST">
   {% csrf_token %}
 
-  <div>
+  <div class="row">
     {{ form.address.errors }}
-    <label for="{{ form.address.id_for_label }}">Address:</label>
-    {{ form.address }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.address.id_for_label }}">Address:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.address }}</div>
   </div>
 
-  <div>
+  <div class="row">
     {{ form.property_type.errors }}
-    <label for="{{ form.property_type.id_for_label }}">Type:</label>
-    {{ form.property_type }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.property_type.id_for_label }}">Type:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.property_type }}</div>
   </div>
 
-  <div>
+  <div class="row">
     {{ form.room_count.errors }}
-    <label for="{{ form.room_count.id_for_label }}">Number of Rooms:</label>
-    {{ form.room_count }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.room_count.id_for_label }}">Number of Rooms:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.room_count }}</div>
   </div>
 
-  <div>
+  <div class="row">
     {{ form.available_date.errors }}
-    <label for="{{ form.available_date.id_for_label }}">Available from:</label>
-    {{ form.available_date }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.available_date.id_for_label }}">Available from:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.available_date }}</div>
   </div>
 
-  <div>
+  <div class="row">
     {{ form.price.errors }}
-    <label for="{{ form.price.id_for_label }}">Price:</label>
-    {{ form.price }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.price.id_for_label }}">Price:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.price }}</div>
   </div>
 
-  <div>
+  <div class="row">
     {{ form.notes.errors }}
-    <label for="{{ form.notes.id_for_label }}">Notes:</label>
-    {{ form.notes }}
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.notes.id_for_label }}">Notes:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.notes }}</div>
   </div>
 
+  
 </form>
+
+{% endblock content %}

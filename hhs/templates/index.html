@@ -3,30 +3,36 @@
 {% block content %}
   
   <div class="c-home-filter">
-    
+    <div class="row">
+        <div class="columns large-offset-2 large-8 medium-12 small-12">
+            <form class="c-home-filter__form">
+                <div class="row collapse">
+                    <div class="small-10 columns">
+                      <input class="c-home-filter__location" type="text" name="location" placeholder="Where are you looking?">
+                    </div>
+                    <div class="small-2 columns">
+                      <button class="c-home-filter__search button"><i class="fa fa-search"></i> Search...</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
   </div>
 
-  <!--<div class="row">
-    <div class="columns large-12">
-      <div class="c-featured js-owl-carousel">
-        <div class="c-featured__slide item">
-          <img src="http://lorempixel.com/1000/400/city">
+  <div class="row">
+      <div class="c-featured-properties">
+      <!-- [TODO] loop hack -->
+      {% for index in "123456" %}
+      <div class="columns large-3 medium-4 small-12">
+            <div class="c-featured-property">
+                <img class="c-featured-property__image" src="http://lorempixel.com/500/500/city">
+                <div class="c-featured-property__title">TITLE</div>
+                <div class="c-featured-property__location">Location</div>
+            </div>
         </div>
-        <div class="c-featured__slide item">
-          <img src="http://lorempixel.com/1000/400/sports">
-        </div>
+        {% endfor %}
       </div>
+      
     </div>
-  </div>-->
-
-  <!--<script>
-    $('.js-owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        autoHeight:true,
-        items: 1
-    });
-  </script>-->
 
 {% endblock content %}

@@ -1,0 +1,16 @@
+.c-home-filter {
+	width: 100%;
+	height: 400px;
+	background-image: url('http://lorempixel.com/1000/500/city');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+.c-home-filter__form {
+	position: relative;
+	padding: $standard-padding;
+	background-color: rgba(0,0,0,0.7);
+	//margin-top: 40%;
+	//transform: translateY(-50%);
+}
