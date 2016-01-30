@@ -18,10 +18,15 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from .views import Home
+from .views import Home, Search, Property
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', Home.as_view(), name='home'),
+
+    url(r'^search/', Search.as_view(), name='search'),
+
+    url(r'^property/', Property.as_view(), name='property'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
