@@ -4,6 +4,7 @@ import requests
 from django.conf import settings
 from django.contrib import messages
 from django.db import transaction
+from django.shortcuts import redirect
 from django.views.generic import FormView, TemplateView
 from first import first
 from furl import furl
@@ -57,7 +58,7 @@ class Search(TemplateView):
     def get(self, request, *args, **kwargs):
         location = self.request.GET.get('location')
         if not location:
-            return redirect(reverse('index'))
+            return redirect('/')
 
         return super().get(request, *args, **kwargs)
 
