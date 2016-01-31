@@ -1,0 +1,19 @@
+ul.errorlist {
+	
+	color: red;
+	list-style: none;
+	font-size: 12px;
+
+	li {
+
+		&:before {
+
+			font-family: FontAwesome;
+			content: "\f071";
+			padding-right: $standard-padding;
+
+		}
+
+	}
+
+}

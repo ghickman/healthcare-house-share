@@ -3,6 +3,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Healthcare House Share</title>
     
     <link rel="stylesheet" href="{% static 'main.css' %}" />
@@ -11,18 +13,22 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
   </head>
   <body>
     <header class="c-header">
       <div class="c-header__identity">Healthcare House Share</div>
       <div class="c-header__tagline">Because we're always on the move</div>
+      <div class="c-login">
+        <button class="button">Log in</button>
+      </div>
     </header>
     <div class="main">
       {% block content %}{% endblock %}
     </div>
     <footer>
-
+      <div class="c-copyright">&copy; 2016 - Healthcare House Share</div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
