@@ -41,6 +41,12 @@
 	color: white;
 	margin-top: $standard-padding;
 	position: relative;
+	a {
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
 	&:after {
 		position: absolute;
 		font-family: FontAwesome;
