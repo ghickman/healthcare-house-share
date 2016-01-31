@@ -77,7 +77,7 @@ class Search(TemplateView):
         FROM hhs_house
         WHERE earth_box(ll_to_earth(%s, %s), %s) @> ll_to_earth(hhs_house.latitude, hhs_house.longitude);
         """
-        radius = '8046.72'  # 5 miles in metres
+        radius = float(self.request.GET.get('radius', 5)) * 1609.3440  # convert miles to metres
         houses = House.objects.raw(sql, [location['lat'], location['lng'], radius])
 
         context = super().get_context_data(**kwargs)
