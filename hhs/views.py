@@ -24,14 +24,15 @@ class AddHouse(FormView):
         resp = requests.post(url)
         resp.raise_for_status()
 
-        latitude, longitude = first(resp.json()['results'])['geometry']['location'].values()
+        location = first(resp.json()['results'])['geometry']['location']
         with transaction.atomic():
             house = House.objects.create(
                 address=form.cleaned_data['address'],
                 property_type=form.cleaned_data['property_type'],
                 room_count=form.cleaned_data['room_count'],
                 parking_space_count=form.cleaned_data['parking_space_count'],
-                lat_long=','.join([str(latitude), str(longitude)]),
+                latitude=location['lat'],
+                longitude=location['lng'],
             )
 
             Contract.objects.create(

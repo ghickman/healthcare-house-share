@@ -20,7 +20,8 @@ class House(models.Model):
     room_count = models.IntegerField(default=1)
     property_type = models.TextField()
     parking_space_count = models.IntegerField(default=0)
-    lat_long = models.TextField()
+    latitude = models.DecimalField(default=0, decimal_places=7, max_digits=10)
+    longitude = models.DecimalField(default=0, decimal_places=7, max_digits=10)
 
     def __str__(self):
         return self.address
