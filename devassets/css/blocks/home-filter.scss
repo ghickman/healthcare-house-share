@@ -9,8 +9,19 @@
 
 .c-home-filter__form {
 	position: relative;
-	padding: $standard-padding;
+	//padding: $standard-padding;
+	padding: 40px 40px 25px 40px;	
 	background-color: rgba(0,0,0,0.7);
-	//margin-top: 40%;
-	//transform: translateY(-50%);
+	margin-top: 160px;
 }
+
+.c-home-filter__location {
+	// [TODO] - Hack
+	border: none !important;
+}
+
+.c-home-filter__search {
+	// [TODO] - Hack
+	padding: 0.8em 1em !important;
+}
+

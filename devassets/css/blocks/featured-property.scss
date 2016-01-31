@@ -1,3 +1,9 @@
 .c-featured-property {
 	padding: $standard-padding 0;
 }
+
+.c-featured-properties__title {
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	margin-top: $standard-padding * 2;
+}

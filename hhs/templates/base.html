@@ -18,16 +18,16 @@
   </head>
   <body>
     <header class="c-header">
-      <div class="c-header__identity">Healthcare House Share</div>
+      <div class="c-header__identity"><img src="{% static 'img/logo.png' %}"></div>
       <div class="c-header__tagline">Because we're always on the move</div>
-      <div class="c-login">
+      <!--<div class="c-login">
         <button class="button">Log in</button>
-      </div>
+      </div>-->
     </header>
     <div class="main">
       {% block content %}{% endblock %}
     </div>
-    <footer>
+    <footer class="footer">
       <div class="c-copyright">&copy; 2016 - Healthcare House Share</div>
     </footer>
 
