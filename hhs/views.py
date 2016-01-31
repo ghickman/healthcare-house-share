@@ -70,7 +70,7 @@ class Search(TemplateView):
         resp = requests.post(url)
         resp.raise_for_status()
 
-        location = first(resp.json()['results'])['geometry']['location']
+        point = first(resp.json()['results'])['geometry']['location']
 
         sql = """
         SELECT *
@@ -78,10 +78,11 @@ class Search(TemplateView):
         WHERE earth_box(ll_to_earth(%s, %s), %s) @> ll_to_earth(hhs_house.latitude, hhs_house.longitude);
         """
         radius = float(self.request.GET.get('radius', 5)) * 1609.3440  # convert miles to metres
-        houses = House.objects.raw(sql, [location['lat'], location['lng'], radius])
+        houses = House.objects.raw(sql, [point['lat'], point['lng'], radius])
 
         context = super().get_context_data(**kwargs)
         context['houses'] = houses
+        context['location'] = location
         return context
 
 
