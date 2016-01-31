@@ -11,7 +11,7 @@ class Contract(models.Model):
     swap_after_end = models.BooleanField(default=False)
     price = models.TextField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.house.address
 
 
@@ -22,7 +22,7 @@ class House(models.Model):
     parking_space_count = models.IntegerField(default=0)
     lat_long = models.TextField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.address
 
 
