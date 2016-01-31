@@ -5,7 +5,7 @@
   <div class="c-home-filter">
     <div class="row">
         <div class="columns large-offset-2 large-8 medium-12 small-12">
-            <form class="c-home-filter__form">
+          <form class="c-home-filter__form" method="GET" action="{% url 'search' %}">
                 <div class="row collapse">
                     <div class="small-10 columns">
                       <input class="c-home-filter__location" type="text" name="location" placeholder="Where are you looking?">
@@ -21,18 +21,16 @@
 
   <div class="row">
       <div class="c-featured-properties">
-      <!-- [TODO] loop hack -->
-      {% for index in "123456" %}
+      {% for house in houses %}
       <div class="columns large-3 medium-4 small-12">
             <div class="c-featured-property">
                 <img class="c-featured-property__image" src="http://lorempixel.com/500/500/city">
-                <div class="c-featured-property__title">TITLE</div>
-                <div class="c-featured-property__location">Location</div>
+                <div class="c-featured-property__title">{{ house.title }}</div>
+                <div class="c-featured-property__location">{{ house.address }}</div>
             </div>
         </div>
         {% endfor %}
       </div>
-      
     </div>
 
 {% endblock content %}

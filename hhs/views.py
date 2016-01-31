@@ -35,6 +35,21 @@ class Home(TemplateView):
 class Search(TemplateView):
     template_name = 'search.html'
 
+    def get(self, request, *args, **kwargs):
+        location = self.request.GET.get('location')
+        if not location:
+            return redirect(reverse('index'))
+
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        location = self.request.GET['location']
+        houses = House.objects.filter(location=location)
+
+        context = super().get_context_data(**kwargs)
+        context['houses'] = houses
+        return context
+
 
 class Property(TemplateView):
     template_name = 'property.html'
