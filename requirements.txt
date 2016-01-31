@@ -1,6 +1,7 @@
 boto==2.39.0
 dj-database-url==0.3.0
 Django==1.9.1
+django-debug-toolbar==1.4
 django-storages==1.1.8
 gunicorn==19.4.5
 opbeat==3.2.1
