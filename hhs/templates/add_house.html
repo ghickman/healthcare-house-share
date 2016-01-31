@@ -22,6 +22,11 @@
   </div>
 
   <div class="row">
+    <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.parking_space_count.id_for_label }}">Number of Parking Spaces:</label></div>
+    <div class="columns large-6 medium-8 small-12 end">{{ form.parking_space_count }}{{ form.parking_space_count.errors }}</div>
+  </div>
+
+  <div class="row">
     <div class="columns large-offset-2 large-2 medium-4 small-12"><label class="middle" for="{{ form.available_date.id_for_label }}">Available from:</label></div>
     <div class="columns large-6 medium-8 small-12 end">{{ form.available_date }}{{ form.available_date.errors }}</div>
   </div>
@@ -36,7 +41,7 @@
     <div class="columns large-6 medium-8 small-12 end">{{ form.notes }}{{ form.notes.errors }}</div>
   </div>
 
-  
+  <input type="submit" value="Add Property" />
 </form>
 
 {% endblock content %}
