@@ -63,7 +63,21 @@ class Search(TemplateView):
 
     def get_context_data(self, **kwargs):
         location = self.request.GET['location']
-        houses = House.objects.filter(location=location)
+        url = furl('https://maps.googleapis.com/maps/api/geocode/json')
+        url.args['address'] = urllib.parse.quote_plus(location)
+        url.args['key'] = settings.GOOGLE_MAPS_API_KEY
+        resp = requests.post(url)
+        resp.raise_for_status()
+
+        location = first(resp.json()['results'])['geometry']['location']
+
+        sql = """
+        SELECT *
+        FROM hhs_house
+        WHERE earth_box(ll_to_earth(%s, %s), %s) @> ll_to_earth(hhs_house.latitude, hhs_house.longitude);'
+        """
+        radius = '8046.72'  # 5 miles in metres
+        houses = House.objects.raw(sql, [location['lat'], location['lng'], radius])
 
         context = super().get_context_data(**kwargs)
         context['houses'] = houses
