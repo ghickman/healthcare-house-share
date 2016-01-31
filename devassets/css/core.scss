@@ -4,10 +4,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+@import 'typography.scss';
+
 @import 'blocks/header.scss';
 @import 'blocks/filter.scss';
 @import 'blocks/home-filter.scss';
 @import 'blocks/featured-property.scss';
+@import 'blocks/search-results.scss';
 @import 'blocks/footer.scss';
 
 @import 'vendor/errorlist.scss';

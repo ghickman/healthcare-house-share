@@ -1,0 +1,51 @@
+.c-search-results {
+	margin-top: $standard-padding;
+}
+
+.c-search-result {
+	margin-bottom: $standard-padding;
+}
+
+.c-features {
+	margin-top: 30px;
+	width: 100%;
+	background-color: #5C9AD9;
+	padding: $standard-padding;
+}
+.c-feature {
+	font-size: 14px;
+	label {
+		// [TODO] - Hacked width
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+.c-features__title {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.c-search-result__description {
+	max-height: 150px;
+	overflow: hidden;
+}
+
+
+
+.c-view-property {
+	background-color: #cf0000;
+	padding: $standard-padding;
+	color: white;
+	margin-top: $standard-padding;
+	position: relative;
+	&:after {
+		position: absolute;
+		font-family: FontAwesome;
+		content: "\f06e";
+		right: $standard-padding;
+		font-size: 20px;
+	}
+}
