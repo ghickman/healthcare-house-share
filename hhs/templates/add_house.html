@@ -2,6 +2,12 @@
 
 {% block content %}
 
+<div class="row">
+  <div class="columns large-offset-2 large-12 medium-12 small-12">
+    <div class="c-title">Add a new property</div>
+  </div>
+</div>
+
 <form method="POST">
   {% csrf_token %}
 
@@ -41,7 +47,11 @@
     <div class="columns large-6 medium-8 small-12 end">{{ form.notes }}{{ form.notes.errors }}</div>
   </div>
 
-  <input type="submit" value="Add Property" />
+  <div class="row">
+    <div class="columns large-3 large-offset-7 end">
+      <button class="button success expanded">Add Property <i class="fa fa-check"></i></button>
+    </div>
+  </div>
 </form>
 
 {% endblock content %}
