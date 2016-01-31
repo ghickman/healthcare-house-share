@@ -27,7 +27,7 @@ urlpatterns = [
 
     url(r'^search/', Search.as_view(), name='search'),
 
-    url(r'^property/', Property.as_view(), name='property'),
+    url(r'^property/(?P<pk>\d+)$', Property.as_view(), name='property'),
 
     url(r'^add-house$', AddHouse.as_view(), name='foo')
 

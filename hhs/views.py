@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.db import transaction
 from django.shortcuts import redirect
-from django.views.generic import FormView, TemplateView
+from django.views.generic import DetailView, FormView, TemplateView
 from first import first
 from furl import furl
 
@@ -86,5 +86,6 @@ class Search(TemplateView):
         return context
 
 
-class Property(TemplateView):
+class Property(DetailView):
+    model = House
     template_name = 'property.html'
