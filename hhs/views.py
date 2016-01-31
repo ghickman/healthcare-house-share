@@ -2,6 +2,7 @@ import urllib
 
 import requests
 from django.conf import settings
+from django.contrib import messages
 from django.db import transaction
 from django.views.generic import FormView, TemplateView
 from first import first
@@ -39,6 +40,9 @@ class AddHouse(FormView):
                 price=form.cleaned_data['price'],
                 end_date=form.cleaned_data['available_date'],
             )
+
+        messages.info(self.request, 'House added!')
+
         return super().form_valid(form)
 
 
