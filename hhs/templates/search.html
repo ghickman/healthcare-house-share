@@ -10,31 +10,31 @@
   <div class="c-search-results">
 
   <!-- Another hacky loop! -->
-  {% for index in '12345' %}
+  {% for house in houses %}
   <div class="c-search-result">
     <div class="row">
       <div class="columns large-3">
         <img src="http://lorempixel.com/300/300/city">
       </div>
       <div class="columns large-6">
-        <div class="c-title">5 bedroom house, Bristol</div>
-        <div class="c-subtitle">Address</div>
+        <div class="c-title">{{ house.room_count }} bedroom house</div>
+        <div class="c-subtitle">{{ house.address }}</div>
         <p class="c-search-result__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non lectus vitae leo luctus pulvinar. Nam tempus sem sed arcu laoreet, id venenatis tellus sollicitudin. Mauris fermentum est vitae nunc feugiat, ut tempus massa sodales. Mauris faucibus metus vel eros lacinia ornare. Sed dapibus tellus nec mollis aliquet. In hac habitasse platea dictumst. Nunc congue sem sit amet eros consequat, in sollicitudin est efficitur. Morbi dapibus quam neque, eget egestas felis accumsan ac. Aenean lacinia odio a diam finibus dignissim. Aliquam vel sem euismod neque iaculis lobortis. Pellentesque ornare ipsum in venenatis vestibulum. Ut fringilla sapien id suscipit tempus. Ut ut finibus lectus. Morbi turpis nunc, pellentesque non purus vitae, mollis varius orci.</p>
       </div>
       <div class="columns large-3">
         <div class="c-features">
           <div class="c-features__title">Features</div>
           <div class="c-feature">
-            <label>Type:</label>1
+            <label>Type:</label>{{ house.property_type|capfirst }}
           </div>
           <div class="c-feature">
-            <label>Bedrooms:</label>2
+            <label>Bedrooms:</label>{{ house.room_count }}
           </div>
           <div class="c-feature">
-            <label>Date available:</label>3
+            <label>Date available:</label>{{ house.contract_set.first.end_date }}
           </div>
           <div class="c-feature">
-            <label>Price (pcm):</label>4
+            {# <label>Price (pcm):</label>{{ house.contra }} #}
           </div>
         </div>
         <div class="c-view-property">
