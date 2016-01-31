@@ -123,8 +123,12 @@ STATICFILES_DIRS = [
 ]
 
 
+# Opbeat
 OPBEAT = {
     'ORGANIZATION_ID': os.environ.get('OPBEAT_ORGANIZATION_ID'),
     'APP_ID': os.environ.get('OPBEAT_APP_ID'),
     'SECRET_TOKEN': os.environ.get('OPBEAT_SECRET_TOKEN'),
 }
+
+# Google Maps
+GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')

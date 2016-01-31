@@ -1,3 +1,4 @@
 .direnv
 __pycache__
 node_modules
+.google_maps_api_key
