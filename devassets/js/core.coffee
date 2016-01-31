@@ -1,3 +1,41 @@
+from = null
+to = null
+
 $ ->
 	if ($('#id_available_date').length > 0)
 		picker = new Pikaday({ field: document.getElementById('id_available_date') });
+
+	if ($('#availability_from').length > 0)
+		from = new Pikaday({ 
+			field: document.getElementById('availability_from'),
+			defaultDate: moment().toDate(),
+			minDate: moment().toDate()
+		});
+		$('#availability_from').change(checkAvailabilityDates)
+
+	if ($('#availability_to').length > 0)
+		to = new Pikaday({ 
+			field: document.getElementById('availability_to'),
+			defaultDate: moment().toDate(),
+			minDate: moment().toDate()
+		});
+		$('#availability_to').change(checkAvailabilityDates)
+
+	if ($('.js-advanced-toggle').length > 0)
+		$('.js-advanced-toggle').click ->
+			$('.js-advanced-search').slideToggle()
+			return
+
+	return
+
+checkAvailabilityDates = ->
+	# [TODO] - Hacky
+	to.minDate = from.toString()
+
+	fromDate = moment(from.toString())
+	toDate = moment(to.toString())
+
+	if (toDate < fromDate)
+		to.setDate(fromDate.toString())
+
+	return 
