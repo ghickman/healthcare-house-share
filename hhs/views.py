@@ -74,7 +74,7 @@ class Search(TemplateView):
         sql = """
         SELECT *
         FROM hhs_house
-        WHERE earth_box(ll_to_earth(%s, %s), %s) @> ll_to_earth(hhs_house.latitude, hhs_house.longitude);'
+        WHERE earth_box(ll_to_earth(%s, %s), %s) @> ll_to_earth(hhs_house.latitude, hhs_house.longitude);
         """
         radius = '8046.72'  # 5 miles in metres
         houses = House.objects.raw(sql, [location['lat'], location['lng'], radius])
